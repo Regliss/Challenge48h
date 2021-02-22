@@ -1,25 +1,36 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<h1> Inscription </h1>
+    <section class="container_login">
 
-	{#{{ form(userForm) }}#}
+        <div class="block_title_login">
+            <p> Inscription</p>
+        </div>
+		{#{{ form(userForm) }}#}
 
-	{{ form_start(userForm) }}
+		{{ form_start(userForm) }}
 
-	{{ form_row(userForm.email) }}
+		{{ form_row(userForm.email) }}
 
-	{{ form_label(userForm.nom) }}
-	{{ form_widget(userForm.nom, { 'attr' : {
-	'placeholder' : 'Thomas',
-	'class' : 'customChamps'
-	}}) }}
+		{{ form_label(userForm.nom) }}
+		{{ form_widget(userForm.nom, { 'attr' : {
+		'placeholder' : 'Thomas',
+		'class' : 'customChamps'
+		}}) }}
 
-	{{ form_row(userForm.prenom) }}
-	
+		{{ form_row(userForm.prenom) }}
+		
 
-	{{ form_row(userForm.password) }}
+		{{ form_row(userForm.password) }}
 
-	{{ form_end(userForm) }}
+		{{ form_end(userForm) }}
+
+		<input class="form-check-input" type="checkbox" value="" id="check" required>
+		<label class="form-check-label" for="check"  >
+			<small>By submitting this form you agree to our <a href="#">terms and conditions</a></small>
+		</label>
+
+		<p>Vous avez déjà un compte ? <a href="{{  path('login') }}">Connectez-vous !<a/></p>
+	</section>
 
 {% endblock %}
