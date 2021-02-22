@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -26,6 +27,11 @@ class User
      * @ORM\Column(type="string", length=255)
      */
     private $Prenom;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = 'ROLE_USER';
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -62,6 +68,21 @@ class User
     public function setPrenom(string $Prenom): self
     {
         $this->Prenom = $Prenom;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        return [$this -> roles];
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
 
         return $this;
     }

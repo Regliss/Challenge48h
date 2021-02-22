@@ -1,4 +1,7 @@
 security:
+    encoders:
+        App\Entity\User:
+            algorithm: auto
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         users_in_memory: { memory: null }
@@ -10,6 +13,15 @@ security:
             anonymous: true
             lazy: true
             provider: users_in_memory
+
+            form_login:
+                login_path: 'login'
+                default_target_path: 'index'
+                check_path: 'login_check'
+
+            logout:
+                path: 'logout'
+                target: 'index'
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

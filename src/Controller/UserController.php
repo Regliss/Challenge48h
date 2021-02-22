@@ -29,7 +29,7 @@ class UserController extends AbstractController
 	*@Route("/register", name="register")
 	*
 	*/
-	public function register(Request $request, UserPasswordEncoderInterface $encoder){
+	public function register(Request $request){
 
 		$manager = $this -> getDoctrine() -> getManager();
 		$user = new User;//objet vide
@@ -41,8 +41,8 @@ class UserController extends AbstractController
 			$manager -> persist($user);
 
 			//Encodage du password
-			$password = $user -> getPassword();
-			$user -> setPassword($encoder -> encodePassword($user, $password));
+			// $password = $user -> getPassword();
+			// $user -> setPassword($encoder -> encodePassword($user, $password));
 
 			$manager -> flush();
 			$this -> addFlash('success', 'Votre inscription a été prise en compte');
@@ -60,7 +60,7 @@ class UserController extends AbstractController
 	*/
 	public function login(AuthenticationUtils $auth){
 		//Le username de la personne qui se connect
-		$lastUsername = $auth -> getLastUsername();
+		$lastEmail = $auth -> getLastUsername();
 		//erreur d'identification
 		$error = $auth -> getLastAuthenticationerror();
 		if($error){
