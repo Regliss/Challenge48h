@@ -1,0 +1,34 @@
+#header{
+    background: linear-gradient(to right, rgb(50, 43, 63) , #46829e);
+}
+
+/* Page Login */
+
+.container_login{
+    border: 1px rgb(49, 49, 49) solid;
+    margin: 5rem auto;
+    padding: 1rem;
+}
+
+.block_title_login{
+    text-align: center;
+    font-weight: bold;
+}
+
+#btn_login{
+    padding: 1rem;
+    letter-spacing: 2px;
+    background-color: #46829e;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: auto 2rem;
+}
+
+#btn_login:hover{
+    background-color: white;
+    color: #46829e;
+    transition: 0.8s;
+    border: 2px #46829e solid;
+    box-shadow: 10px 5px 5px #46829e ;
+}
