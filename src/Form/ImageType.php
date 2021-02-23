@@ -19,8 +19,8 @@ class ImageType extends AbstractType
             ->add('nom')
             ->add('categorie', ChoiceType::class, [
                 'choices'  => [
-                    'photo ambiance' => null,
-                    'photo produit' => null,
+                    'photo ambiance' => 'photo ambiance',
+                    'photo produit' => 'photo produit',
                 ],
             ])
             ->add('file', FileType::class, array(
