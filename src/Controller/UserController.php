@@ -65,6 +65,9 @@ class UserController extends AbstractController
 		$error = $auth -> getLastAuthenticationerror();
 		if($error){
 			$this -> addFlash('errors', 'Problème d\'identifiant');
+		} else{
+			$this -> addFlash('success', 'Connexion réussi');
+			return $this -> redirectToRoute('admin_image');
 		}
 
 
