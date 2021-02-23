@@ -4,6 +4,21 @@
 
 }
 
+                                                /* Page Index */
+
+.title_tab{
+    text-align: center;
+}
+
+/* table {
+    border: medium solid #000000;
+    width: 50%;
+    }
+    td, th {
+    border: thin solid #6495ed;
+    width: 50%;
+} */
+
                                                 /* Page Login */
 
 .container_login{

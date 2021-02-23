@@ -60,7 +60,7 @@ class UserController extends AbstractController
 	*/
 	public function login(AuthenticationUtils $auth){
 		//Le username de la personne qui se connect
-		$lastEmail = $auth -> getLastUsername();
+		$lastUsername = $auth -> getLastUsername();
 		//erreur d'identification
 		$error = $auth -> getLastAuthenticationerror();
 		if($error){
@@ -69,7 +69,7 @@ class UserController extends AbstractController
 
 
 		return $this -> render('user/login.html.twig', array(
-			'lastEmail' => $lastEmail,)
+			'lastUsername' => $lastUsername,)
 		);
 
 	}
