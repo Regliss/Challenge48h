@@ -19,25 +19,8 @@
     </ul>
 </div> #}
                     <h3 class="title_tab"> Gestionnaire de tableaux</h3>
-{# <table summary="exemple de structure d'un tableau de données 2 lignes, 2 colonnes">
-<caption>Tableau de données</caption>
-    <tr>
-        <th>Titre colonne 1</th>
-        <th>Titre colonne 2</th>
-    </tr>
 
-    <tr>
-        <td>cellule A1</td>
-        <td>cellule B1</td>
-    </tr>
-
-    <tr>
-        <td>cellule A2</td>
-        <td>cellule B2</td>
-    </tr>
-</table> #}
-
-    <table class="table table-striped">
+    {# <table class="table table-striped">
     <thead>
         <tr>
         <th scope="col">#</th>
@@ -54,38 +37,44 @@
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-            <td>Image 1</td>
+            <td></td>
             <td>
                 <input type="button" value="ajouter"/>
                 <input type="button" value="edit"/>
                 <input type="button" value="supprimer"/>
             </td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Image 2</td>
-            <td>
-                <input type="button" value="ajouter"/>
-                <input type="button" value="edit"/>
-                <input type="button" value="supprimer"/>
-            </td>       
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>Image 3</td>
-            <td>
-                <input type="button" value="ajouter"/>
-                <input type="button" value="edit"/>
-                <input type="button" value="supprimer"/>
-            </td>
-        </tr>
+        
     </tbody>
+    </table> #}
+
+    <a href="{{ path('admin_image_add') }}" class="btn btn-primary m-5">Ajouter un post</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">ID</th>
+                <th scope="col" class="text-center">image</th>
+                <th scope="col" class="text-center">Utilisateur</th>
+                <th scope="col" class="text-center">Titre</th>
+                <th scope="col" class="text-center">Contenu</th>
+                <th colspans="2" scope="col" class="text-center">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for img in image %}
+            <tr style="text-align: center;">
+                <th scope="row">{{img.id}}</td>
+                <td><img src="{{ asset('/photo/' ~ img.image) }}" height="80px" /></td>
+
+                <td>{{img.user}}</td>
+                <td>{{img.title}}</td>
+                <td>{{img.content | slice(0,65)}}</td>
+                <td><a href="{{path('admin_image_delete',{'id':img.id})}}"><i class="fas fa-trash-alt"></i></a></td>
+                <td><a href="{{path('admin_image_update',{'id':img.id})}}"><i class="fas fa-edit"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
 {% endblock %}
