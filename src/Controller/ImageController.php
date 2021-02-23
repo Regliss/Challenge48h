@@ -105,7 +105,7 @@ class ImageController extends AbstractController
 		return $this -> redirectToRoute('admin_image');
 		}
 		//5 : Vue 
-		return $this -> render('admin/image_form.html.twig', ['imageForm' => $form -> createView()]);
+		return $this -> render('image/image_form.html.twig', ['imageForm' => $form -> createView()]);
 		// test : localhost:8000/admin/image/update/id
 
 		}
