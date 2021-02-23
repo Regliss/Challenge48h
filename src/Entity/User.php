@@ -29,7 +29,7 @@ class User
     private $Prenom;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true, nullable="true")
+     * @ORM\Column(type="string", length=180, unique=true)
      */
     private $username;
 

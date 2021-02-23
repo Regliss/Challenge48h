@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>Symfony 4 - Projet</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<!-- Blog/Templates/admin/post_form.html/twig -->
+
+	<h1> Ajouter Post </h1>
+
+	
+
+	<!-- localhost:8000/admin/post/add -->
+
+	{{ form(postForm) }}
+
+</body>
+</html>
+
+{% endblock %}
