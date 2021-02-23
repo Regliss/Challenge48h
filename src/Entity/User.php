@@ -29,6 +29,11 @@ class User
     private $Prenom;
 
     /**
+     * @ORM\Column(type="string", length=180, unique=true, nullable="true")
+     */
+    private $username;
+
+    /**
      * @ORM\Column(type="json")
      */
     private $roles = 'ROLE_USER';
@@ -42,6 +47,23 @@ class User
      * @ORM\Column(type="string", length=255)
      */
     private $Password;
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
 
     public function getId(): ?int
     {
