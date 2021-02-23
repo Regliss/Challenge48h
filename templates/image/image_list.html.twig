@@ -8,16 +8,14 @@
 
 <h1>Ceci est une page de gestion des posts</h1>
 
-{# <a href="{{ path('admin_post_add') }}" class="btn btn-primary m-5">Ajouter un post</a> #}
+<a href="{{ path('image_add') }}" class="btn btn-primary m-5">Ajouter un post</a>
 
 <table class="table table-striped table-dark">
     <thead>
         <tr>
             <th scope="col" class="text-center">ID</th>
+            <th scope="col" class="text-center">Nom</th>
             <th scope="col" class="text-center">image</th>
-            <th scope="col" class="text-center">Utilisateur</th>
-            <th scope="col" class="text-center">Titre</th>
-            <th scope="col" class="text-center">Contenu</th>
             <th colspans="2" scope="col" class="text-center">actions</th>
         </tr>
     </thead>
@@ -27,9 +25,7 @@
             <th scope="row">{{p.id}}</td>
             <td><img src="{{ asset('/photo/' ~ p.image) }}" height="80px" /></td>
 
-            <td>{{p.user}}</td>
-            <td>{{p.title}}</td>
-            <td>{{p.content | slice(0,65)}}</td>
+            <td>{{p.nom}}</td>
             {# <td><a href="{{path('admin_post_delete',{'id':p.id})}}"><i class="fas fa-trash-alt"></i></a></td>
             <td><a href="{{path('admin_post_update',{'id':p.id})}}"><i class="fas fa-edit"></i></a></td> #}
         </tr>

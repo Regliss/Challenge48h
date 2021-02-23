@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 use App\Entity\Image;
 use App\Entity\User;
@@ -27,7 +28,7 @@ class ImageController extends AbstractController
 	}
 
     /**
-	* @Route("/image", name="image")
+	* @Route("/image", name="image_add")
 	*
 	*/
 	public function imageAdd(Request $request){
@@ -50,7 +51,7 @@ class ImageController extends AbstractController
 			$this -> addFlash('success', 'L image N°' . $image -> getId()  . ' a bien été enregistré');
 			return $this -> redirectToRoute('admin_image');
 		}
-		return $this -> render('admin/image_form.html.twig', [
+		return $this -> render('image/image_form.html.twig', [
 			'imageForm' => $form -> createView()
 
 
