@@ -26,6 +26,7 @@ class UserType extends AbstractType
                 )
             ))
             ->add('prenom', TextType::class)
+            ->add('username', TextType::class)
             ->add('email', EmailType::class, array(
                 'constraints' => array(
                     new Assert\NotBlank(array(
