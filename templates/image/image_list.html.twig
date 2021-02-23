@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<h1>Ceci est une page de gestion des posts</h1>
+<h1>Ceci est une page de gestion des images</h1>
 
 <a href="{{ path('image_add') }}" class="btn btn-primary m-5">Ajouter un post</a>
 
@@ -23,11 +23,11 @@
         {% for p in images %}
         <tr style="text-align: center;">
             <th scope="row">{{p.id}}</td>
+            <td>{{p.nom}}</td>
             <td><img src="{{ asset('/photo/' ~ p.image) }}" height="80px" /></td>
 
-            <td>{{p.nom}}</td>
-            {# <td><a href="{{path('admin_post_delete',{'id':p.id})}}"><i class="fas fa-trash-alt"></i></a></td>
-            <td><a href="{{path('admin_post_update',{'id':p.id})}}"><i class="fas fa-edit"></i></a></td> #}
+            <td><a href="{{path('admin_image_delete',{'id':p.id})}}"><i class="fas fa-trash-alt"></i></a></td>
+            <td><a href="{{path('admin_image_update',{'id':p.id})}}"><i class="fas fa-edit"></i></a></td>
         </tr>
         {% endfor %}
     </tbody>

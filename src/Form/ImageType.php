@@ -17,7 +17,7 @@ class ImageType extends AbstractType
         $builder
             ->add('nom')
             ->add('categorie')
-            ->add('image', FileType::class, array(
+            ->add('file', FileType::class, array(
                 'required' => false ))
             //->add('registerDate')
             ->add('submit', SubmitType::class)
