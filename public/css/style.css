@@ -18,12 +18,12 @@
 }
 
 #btn_login{
-    padding: 1rem;
+    padding: 0.4rem;
     letter-spacing: 2px;
     background-color: #46829e;
     color: white;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 16px;
     margin: auto 2rem;
 }
 

@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
+
     <section class="container_login">
 
         <div class="block_title_login">
@@ -10,18 +11,23 @@
 
 		{{ form_start(userForm) }}
 
-		{{ form_row(userForm.email) }}
+		{{ form_row(userForm.email, { 'attr' : {
+			'class' : 'form-group'
+		}}) }}
 
 		{{ form_label(userForm.nom) }}
 		{{ form_widget(userForm.nom, { 'attr' : {
-		'placeholder' : 'Thomas',
-		'class' : 'customChamps'
+			'placeholder' : 'Thomas',
+			'class' : 'form-group'
 		}}) }}
 
-		{{ form_row(userForm.prenom) }}
-		
+		{{ form_row(userForm.prenom, { 'attr': {
+			'class' : 'form-group'
+		}}) }}
 
-		{{ form_row(userForm.password) }}
+		{{ form_row(userForm.password, { 'attr': {
+			'class' : 'form-group'
+		}}) }}		
 
 		{{ form_end(userForm) }}
 
@@ -31,6 +37,7 @@
 		</label>
 
 		<p>Vous avez déjà un compte ? <a href="{{  path('login') }}">Connectez-vous !<a/></p>
+		
 	</section>
 
 {% endblock %}
