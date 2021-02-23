@@ -48,7 +48,7 @@
     </tbody>
     </table> #}
 
-    <a href="{{ path('admin_image_add') }}" class="btn btn-primary m-5">Ajouter un post</a>
+    <a href="{{ path('image_add') }}" class="btn btn-primary m-5">Ajouter un post</a>
 
     <table class="table table-striped">
         <thead>
@@ -62,7 +62,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for img in image %}
+            {% for img in images %}
             <tr style="text-align: center;">
                 <th scope="row">{{img.id}}</td>
                 <td><img src="{{ asset('/photo/' ~ img.image) }}" height="80px" /></td>
