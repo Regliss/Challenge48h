@@ -15,6 +15,7 @@
         <tr>
             <th scope="col" class="text-center">ID</th>
             <th scope="col" class="text-center">Nom</th>
+            <th scope="col" class="text-center">Categorie</th>
             <th scope="col" class="text-center">image</th>
             <th colspans="2" scope="col" class="text-center">actions</th>
         </tr>
@@ -24,6 +25,7 @@
         <tr style="text-align: center;">
             <th scope="row">{{p.id}}</td>
             <td>{{p.nom}}</td>
+            <td>{{p.categorie}}</td>
             <td><img src="{{ asset('/photo/' ~ p.image) }}" height="80px" /></td>
 
             <td><a href="{{path('admin_image_delete',{'id':p.id})}}"><i class="fas fa-trash-alt"></i></a></td>
