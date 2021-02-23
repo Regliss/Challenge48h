@@ -2,24 +2,29 @@
 
 
 {% block content %}
+    <section class="container_login">
 
-<form method="post" action="">
+        <div class="block_title_login">
+            <p> Connexion </p>
+        </div>
 
+        <form method="post" action="">
 
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" id="registration_username" class="form-control" name="_username"  value="{{ lastUsername }}"/>
-    </div>
-    <div class="form-group">
-        <label>Mot de passe</label>
-        <input type="password" class="form-control" name="_password" />
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Se connecter" class="btn btn-primary"/>
-    </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="registration_username" class="form-control" name="_username"  value="{{ lastUsername }}"/>
+            </div>
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" class="form-control" name="_password" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Se connecter" class="btn btn-primary"/>
+            </div>
 
-</form>
+            {# <p>Vous n'avez pas de compte ? <a href="{{  path('register') }}">Inscrivez-vous !<a/></p> #}
+        </form>
+    </section>  
 
-    
 
 {% endblock %}
