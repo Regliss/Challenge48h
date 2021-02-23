@@ -1,7 +1,6 @@
 #header{
     margin-bottom: 2rem;
     background: linear-gradient(to right, rgb(50, 43, 63) , #46829e);
-
 }
 
                                                 /* Page Index */
@@ -50,7 +49,6 @@
     box-shadow: 10px 5px 5px #46829e ;
 }
 
-                                                /* Page Inscription */
 
                                                 /* Page Profil */
 
@@ -65,4 +63,20 @@
     width: 100%;
     bottom: 0;
     position: relative;
+}
+                                                /* Page Tab img */
+
+.btn_post{
+    padding: 0.4rem;
+    letter-spacing: 2px;
+    background-color: #092330;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    margin: auto 2rem;
+}
+
+.btn_post:hover{
+    background-color: #46829e;
+    transition: 0.8s;
 }
